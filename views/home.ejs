@@ -1,0 +1,24 @@
+<%-include("partials/header") -%>
+<div class="content">
+  <h1 class="heading"><%=title%></h1>
+  <p class="words"><%=page%></p>
+  <br />
+  <%if(posts.length===0){%> <%}else{%> <%posts.forEach((post)=>{%>
+  <br />
+  <h1 style="text-transform: uppercase; margin-bottom: 10px">
+    <%=post.title%>
+  </h1>
+  <p class="overflow"><%=post.body%></p>
+  <%if(post.body.length>=278){%>
+  <a class="readMore" href="/posts/<%=post.title%>">Read More</a>
+  <br />
+  <%}%> <%})%>
+  <!-- <%for(let i=0;i<posts.length;i++){%>
+      <br />
+      <h1><%=posts[i].title%></h1>
+      <br />
+  <p><%=posts[i].body%></p>
+  <%}%> -->
+  <%}%>
+</div>
+<%-include('partials/footer') -%>
